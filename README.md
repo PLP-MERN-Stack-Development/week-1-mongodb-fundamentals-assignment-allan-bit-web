@@ -44,4 +44,62 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 
 - [MongoDB Documentation](https://docs.mongodb.com/)
 - [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/)
+
+# PLP Bookstore MongoDB Scripts
+
+This directory contains scripts to help you populate and query a sample MongoDB database for a bookstore.
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) installed
+- [MongoDB](https://www.mongodb.com/) running locally on `mongodb://localhost:27017` (or update the URI in the scripts if using a different setup)
+- Install dependencies (if any):
+  ```sh
+  npm install mongodb
+  ```
+
+## Scripts
+
+### 1. Populate the Database
+
+Use `insert_books.js` to insert sample book data into the `plp_bookstore` database:
+
+```sh
+node insert_books.js
+```
+
+This will:
+- Connect to your MongoDB instance
+- Drop the `books` collection if it exists
+- Insert sample book data
+- Display the inserted books
+
+### 2. Run Book Queries
+
+Use `test_queries.js` to run example queries on the `books` collection:
+
+```sh
+node test_queries.js
+```
+
+This will:
+- Find and display all books
+- Find books by a specific author
+- Find books published after a certain year
+- Find books in a specific genre
+- Find in-stock books
+
+You can modify `test_queries.js` to run custom queries or display results differently.
+
+## Custom Queries
+
+To use the query functions in your own scripts, import them from `queries.js`:
+
+```js
+const { findAllBooks, findBooksByAuthor, ... } = require('./queries');
+```
+
+---
+
+If you have any issues or want to connect to a remote MongoDB instance, update the `uri` variable in the scripts accordingly. 
